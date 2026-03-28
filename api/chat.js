@@ -153,7 +153,6 @@ export default async function handler(req) {
     });
 
 const data = await groqRes.json();
-console.log('Groq response:', JSON.stringify(data));
 const reply = data.choices?.[0]?.message?.content || 'Error al obtener respuesta.';
 
     return new Response(JSON.stringify({ reply }), {
